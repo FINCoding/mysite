@@ -1,0 +1,23 @@
+.top-bar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #a1c1ab;
+    },
+.top-bar-section{
+    float:right;
+    list-style-type: none;
+    margin: 0 1.5%;
+    padding: 0;
+    overflow: hidden;
+    background-color: #a1c1ab;
+    },
+.right{
+    float:right;
+    list-style-type: none;
+    margin: 0 1.5%;
+    padding: 0;
+    overflow: hidden;
+    background-color: #a1c1ab;
+    }
