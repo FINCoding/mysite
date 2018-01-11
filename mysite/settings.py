@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'loginsys',
+    'channels'
   ]
 
 CHANNEL_LAYERS ={ #27.11
     'default':{
         'BACKEND': 'asgiref.inmemory.ChannelLayer',
-        'ROUTING': 'myproj.routing.channel_routing',
+        'ROUTING': 'mysite.routing.channel_routing',
     },
 }
 
