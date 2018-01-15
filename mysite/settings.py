@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'loginsys',
-    'channels'
+    'channels',
+    'chat'
   ]
 
 CHANNEL_LAYERS ={ #27.11
@@ -47,7 +48,7 @@ CHANNEL_LAYERS ={ #27.11
         'BACKEND': 'asgiref.inmemory.ChannelLayer',
         'ROUTING': 'mysite.routing.channel_routing',
     },
-}
+    }
 
 MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
