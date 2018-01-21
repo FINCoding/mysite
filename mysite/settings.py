@@ -43,12 +43,12 @@ INSTALLED_APPS = [
     'chat'
   ]
 
-CHANNEL_LAYERS ={ #27.11
-    'default':{
-        'BACKEND': 'asgiref.inmemory.ChannelLayer',
-        'ROUTING': 'mysite.routing.channel_routing',
-    },
-    }
+# CHANNEL_LAYERS ={ #27.11
+#     'default':{
+#         'BACKEND': 'asgiref.inmemory.ChannelLayer',
+#         'ROUTING': 'mysite.routing.channel_routing',
+#     },
+#     }
 
 MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
