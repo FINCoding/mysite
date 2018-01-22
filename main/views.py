@@ -6,5 +6,6 @@ def main(request):
     form = SubscriberForm(request.POST or None)
     if request.method == "POST":
         print(form)
+        new_form = form.save()
     return render(request, 'main.html', locals() )
 
