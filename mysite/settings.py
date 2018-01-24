@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'loginsys',
-    'channels',
-    'chat'
+    # 'channels',
+    'chat',
+    'products',
+    'adv',
   ]
 
 # CHANNEL_LAYERS ={ #27.11
