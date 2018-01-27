@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'loginsys',
-    'channels',
-    'chat'
+    # 'channels',
+    'chat',
+    'products',
+    'adv',
   ]
 
 # CHANNEL_LAYERS ={ #27.11
@@ -135,6 +137,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static/media"),
     ]
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "css/static")
