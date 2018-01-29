@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'^auth/', include('loginsys.urls')),
     url(r'^chat/', include('chat.urls', namespace='chat')),
     url(r'^', include('main.urls')),
-    url(r'^', include('products.urls')),
-    url(r'^', include('adv.urls')),
+    url(r'^prod/', include('products.urls')),
+    url(r'^adv/', include('adv.urls')),
 ]
