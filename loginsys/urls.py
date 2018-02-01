@@ -3,7 +3,7 @@ from django.contrib import admin
 from loginsys import views
 
 urlpatterns = [
-    url(r'^login/', views.login, name='main'),
-    url(r'^logout/', views.logout, name='main'),
+    url(r'^login/', views.login, name='login'),
+    url(r'^logout/', views.logout, name='logout'),
     url(r'^register/$', views.register, name='register'),
 ]

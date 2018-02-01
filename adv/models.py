@@ -2,6 +2,8 @@ from django.db import models
 from products.models import Product
 
 class Adv(models.Model):
+    subj = models.CharField(max_length=64, blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
     customer_email = models.EmailField(blank=True, null=True, default=None)
     customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
     customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)

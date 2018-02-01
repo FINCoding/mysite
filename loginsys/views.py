@@ -12,9 +12,11 @@ from django.template import RequestContext, loader
 
 @csrf_protect
 def login(request):
+    print("Hello")
     args = {}
     print(request.POST)
     if request.POST:
+        print('я тут')
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
         user = auth.authenticate(username=username, password=password)
@@ -26,6 +28,7 @@ def login(request):
             args('login_error')
             return render(request, 'login.html', args)
     else:
+        print('или тут')
         return render(request, 'login.html', args)
 
 @csrf_protect

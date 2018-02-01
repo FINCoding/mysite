@@ -18,6 +18,7 @@ class ProductImage(models.Model):
     image = models.ImageField(upload_to='media/products_images/')
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    is_main = models.BooleanField(default=True)
 
     def __str__(self):
         return "%s" % self.id
