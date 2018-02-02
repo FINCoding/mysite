@@ -27,3 +27,14 @@ class ProductImage(models.Model):
         verbose_name = "Фотография"
         verbose_name_plural = "Фотографии"
 
+class ProductCategory(models.Model):
+    name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = "Категория товара"
+        verbose_name_plural = "Категория товаров"
+
