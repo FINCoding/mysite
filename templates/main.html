@@ -11,22 +11,22 @@
 <body>
 {% include 'navbar.html' %}
 
-<aside id="menu">
-    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width:auto; height: 100%;">
-        <ul class="nav" id="side-menu">
-            <li class="active">
-                <a href="/">
-                    <span class="nav-label"> safd </span>
-                </a>
-            </li>
-            <li>
-                <a href="/">
-                    <span class="nav-label"> test </span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</aside>>
+<!--<aside id="menu">-->
+    <!--<div class="slimScrollDiv" style="position: relative; overflow: hidden; width:auto; height: 100%;">-->
+        <!--<ul class="nav" id="side-menu">-->
+            <!--<li class="active">-->
+                <!--<a href="/">-->
+                    <!--<span class="nav-label"> safd </span>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="/">-->
+                    <!--<span class="nav-label"> test </span>-->
+                <!--</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</aside>>-->
 
 <div class="container">
     <div class="row">
@@ -37,15 +37,17 @@
     <div class="row">
           {% for adv in advs %}
             <div class="col-lg-3">
-                <div class="product-item">
-                    <div>
-                        <img src="/".url >
+                <a href="{%  url 'adv' adv.id %}">
+                    <div class="product-item">
+                        <div>
+                          <img src="/".url >
+                        </div>
+                      <h4> {{ adv.subj }} </h4>
+                        <p>
+                            {{ adv.comments|truncatechars_html:40 }}
+                        </p>
                     </div>
-                  <h4> {{ adv.subj }} </h4>
-                    <p>
-                        {{ adv.comments|truncatechars_html:40 }}
-                    </p>
-                </div>
+                </a>
             </div>
           {% endfor %}
         </div>
