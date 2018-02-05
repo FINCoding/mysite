@@ -23,7 +23,9 @@ def login(request):
             context = {'username': username}
             return render(request, 'main.html', context)
         else:
-            args('login_error')
+            # args('login_error')
+            print('я еуе')
+            login_error = 'login_error'
             return render(request, 'login.html', args)
     else:
         return render(request, 'login.html', args)

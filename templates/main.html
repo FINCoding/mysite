@@ -1,5 +1,5 @@
+
 <!--{% load staticfiles %}-->
-{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -12,20 +12,20 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+        <div class = "top-bar">
+            <section class="top-bar-section">
+                <ul>
+                    {% if username %}
+                        <li><a href="/auth/logout/">Выйти ({{ username }}) </a></li>
+                    {% else %}
+                        {{ username }}
+                        {{ reg }}
+                        <a class="right" href="/auth/login/">Войти </a>
+                    {% endif %}
+                </ul>
+            </section>
+        </div>
 
-<div class = "top-bar">
-    <section class="top-bar-section">
-        <ul>
-            {% if username %}
-                <li><a href="/auth/logout/">Выйти ({{ username }}) </a></li>
-            {% else %}
-                {{ username }}
-                {{ reg }}
-                <a class="right" href="/auth/login/">Войти </a>
-            {% endif %}
-        </ul>
-    </section>
-</div>
 
 <div class="container">
     <div class="row">
