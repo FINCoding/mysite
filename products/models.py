@@ -18,6 +18,7 @@ class ProductImage(models.Model):
     image = models.ImageField(upload_to='media/products_images/')
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    is_main = models.BooleanField(default=True)
 
     def __str__(self):
         return "%s" % self.id
@@ -25,4 +26,15 @@ class ProductImage(models.Model):
     class Meta:
         verbose_name = "Фотография"
         verbose_name_plural = "Фотографии"
+
+class ProductCategory(models.Model):
+    name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = "Категория товара"
+        verbose_name_plural = "Категория товаров"
 

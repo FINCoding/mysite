@@ -21,3 +21,38 @@
     overflow: hidden;
     background-color: #a1c1ab;
     }
+.product-item{
+    height: 200px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    }
+.row{
+    margin-left: -20px;
+
+}
+.span{
+    float:left;
+    width: 220px;
+    margin-left:20px;
+}
+.breadcrumb{
+    padding: 7px 14px;
+    margin: 0 0 18px;
+    background-color: #fbfbfb;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 #ffffff;
+    background-repeat: repeat-x;
+    border: 1px solid #ddd;
+}
+.span product_list{
+    margin-top: -5px;
+    margin-left: 5px;
+    min-height: 500px;
+}
+.nav{
+    list-style: none;
+    margin: 0;
+}

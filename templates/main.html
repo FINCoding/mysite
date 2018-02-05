@@ -1,10 +1,7 @@
-
-<!--{% load staticfiles %}-->
+{% load staticfiles %}
 {% load static %}
 
 {% block content %}
-
-{% endblock %}
 <html>
 <head>
 
@@ -12,37 +9,61 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-        <div class = "top-bar">
-            <section class="top-bar-section">
-                <ul>
-                    {% if username %}
-                        <li><a href="/auth/logout/">Выйти ({{ username }}) </a></li>
-                    {% else %}
-                        {{ username }}
-                        {{ reg }}
-                        <a class="right" href="/auth/login/">Войти </a>
-                    {% endif %}
-                </ul>
-            </section>
-        </div>
-
+{% include 'navbar.html' %}
 
 <div class="container">
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
             <h1>Hello!</h1>
-            <!--<div>-->
-                <!--<form action="" method="post">{% csrf_token %}-->
-                    <!--{{ form.as_p }}-->
-                    <!--<div>-->
-                        <!--<button type="submit" class="btn btn-primary">Отправить</button>-->
-                    <!--</div>-->
-                <!--</form>-->
-            <!--</div>-->
         </div>
     </div>
+
+    <div class="row">
+        <div class="span">
+            <ul class="breadcrumb">
+                <li>Categories</li>
+            </ul>
+        <div class="span product_list">
+            <ul class="nav">
+                <li>
+                    <a class="active" href="/">Desktops</a>
+                    <ul>
+                        <li>
+                            <a href="">anything</a>
+                        </li>
+                         <li>
+                            <a href="">anywhere</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">other</a>
+                </li>
+                <li>
+                    <a href="">cars</a>
+                </li>
+            </ul>
+        </div>
+</div>
+          {% for adv in advs %}
+            <div class="col-lg-3">
+                <a href="{%  url 'adv' adv.id %}">
+                    <div class="product-item">
+                        <div>
+                          <img src="/".url >
+                        </div>
+                      <h4> {{ adv.subj }} </h4>
+                        <p>
+                            {{ adv.comments|truncatechars_html:40 }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+          {% endfor %}
+        </div>
 </div>
 
 {% block login %}{% endblock %}
 </body>
 </html>
+{% endblock %}
