@@ -28,6 +28,7 @@ class ProductImage(models.Model):
         verbose_name_plural = "Фотографии"
 
 class ProductCategory(models.Model):
+    product = models.ForeignKey(Product, blank=True, null=True, default=None)
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
 
