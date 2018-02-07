@@ -45,31 +45,16 @@
             </ul>
         </div>
 </div>
-          <!--{% for adv in advs %}-->
-            <!--<div class="col-lg-3">-->
-                <!--<a href="{%  url 'adv' adv.id %}">-->
-                    <!--<div class="product-item">-->
-                        <!--<div>-->
-                          <!--<img src="/".url >-->
-                        <!--</div>-->
-                      <!--<h4> {{ adv.subj }} </h4>-->
-                        <!--<p>-->
-                            <!--{{ adv.comments|truncatechars_html:40 }}-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</div>-->
-          <!--{% endfor %}-->
-           {% for item in productsInAdv %}
+          {% for adv in advs %}
             <div class="col-lg-3">
-                <a href="{%  url 'adv' item.adv.id %}">
+                <a href="{%  url 'adv' adv.id %}">
                     <div class="product-item">
                         <div>
-                          <img src="{{ item.image.url }}">
+                          <img src="/".url >
                         </div>
-                      <h4> {{ item.adv.subj }} </h4>
+                      <h4> {{ adv.subj }} </h4>
                         <p>
-                            {{ item.adv.comments|truncatechars_html:40 }}
+                            {{ adv.comments|truncatechars_html:40 }}
                         </p>
                     </div>
                 </a>

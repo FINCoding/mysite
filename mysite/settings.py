@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'loginsys',
     # 'channels',
     'chat',
-    'products',
+    'category',
     'adv',
   ]
 

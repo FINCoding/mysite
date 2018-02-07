@@ -1,23 +1,23 @@
 from django.contrib import admin
 from .models import *
 
-class ProductInAdvInline(admin.TabularInline):
-    model = ProductInAdv
+class ImageInAdvInline(admin.TabularInline):
+    model = ImageInAdv
     extra = 0
 
 class AdvAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Adv._meta.fields]
-    inlines = [ProductInAdvInline]
+    inlines = [ImageInAdvInline]
     class Meta:
         model = Adv
 
 admin.site.register(Adv, AdvAdmin)
 
 
-class ProductInAdvAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in ProductInAdv._meta.fields]
+class ImageInAdvAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in ImageInAdv._meta.fields]
 
     class Meta:
-        model = ProductInAdv
+        model = ImageInAdv
 
-admin.site.register(ProductInAdv, ProductInAdvAdmin)
+admin.site.register(ImageInAdv, ImageInAdvAdmin)
