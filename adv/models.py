@@ -25,6 +25,9 @@ class ImageInAdv(models.Model):
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
+    def __str__(self):
+        return "%s" % self.id
+
     class Meta:
         verbose_name = "Картинки в объявлениях"
         verbose_name_plural = "Картинки в объявлениях"
