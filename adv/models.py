@@ -21,7 +21,7 @@ class Adv(models.Model):
 
 class ImageInAdv(models.Model):
     adv = models.ForeignKey(Adv, blank=True, null=True, default=None)
-    image = models.ImageField(upload_to='media/images_adv/')
+    image = models.ImageField(upload_to='images_adv/')
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
