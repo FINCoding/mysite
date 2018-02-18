@@ -45,37 +45,37 @@
             </ul>
         </div>
 </div>
-          <!--{% for adv in advs %}-->
-            <!--<div class="col-lg-3">-->
-                <!--<a href="{%  url 'adv' adv.id %}">-->
-                    <!--<div class="product-item">-->
-                        <!--<div>-->
-                          <!--<img src="{{ adv.image.url}}" >-->
-                        <!--</div>-->
-                      <!--<h4> {{ adv.subj }} </h4>-->
-                        <!--<p>-->
-                            <!--{{ adv.comments|truncatechars_html:40 }}-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</div>-->
-          <!--{% endfor %}-->
-        {% for imageInAdv in imagesInAdv %}
+          {% for adv in advs %}
             <div class="col-lg-3">
-                <a href="{%  url 'adv' imageInAdv.adv_id %}">
+                <a href="{%  url 'adv' adv.id %}">
                     <div class="product-item">
                         <div>
-                          <img src="{{ imageInAdv.image.url }}" >
-                        <!--<img src="/static/media/images_adv/puzzle.png   "-->
+                          <img src="{{ adv.image.url}}" >
                         </div>
-                      <h4> {{ imageInAdv.adv.subj }} </h4>
+                      <h4> {{ adv.subj }} </h4>
                         <p>
-                            {{ imageInAdv.adv.comments|truncatechars_html:40 }}
+                            {{ adv.comments|truncatechars_html:40 }}
                         </p>
                     </div>
                 </a>
             </div>
           {% endfor %}
+        <!--{% for imageInAdv in imagesInAdv %}-->
+            <!--<div class="col-lg-3">-->
+                <!--<a href="{%  url 'adv' imageInAdv.adv_id %}">-->
+                    <!--<div class="product-item">-->
+                        <!--<div>-->
+                          <!--<img src="{{ imageInAdv.image.url }}" >-->
+                        <!--&lt;!&ndash;<img src="/static/media/images_adv/puzzle.png   "&ndash;&gt;-->
+                        <!--</div>-->
+                      <!--<h4> {{ imageInAdv.adv.subj }} </h4>-->
+                        <!--<p>-->
+                            <!--{{ imageInAdv.adv.comments|truncatechars_html:40 }}-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+          <!--{% endfor %}-->
         </div>
 </div>
 
