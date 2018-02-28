@@ -21,3 +21,8 @@ class ImageInAdvAdmin(admin.ModelAdmin):
         model = ImageInAdv
 
 admin.site.register(ImageInAdv, ImageInAdvAdmin)
+
+class testAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Test._meta.fields]
+
+admin.site.register(Test, testAdmin)

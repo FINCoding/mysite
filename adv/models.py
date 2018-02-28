@@ -31,3 +31,7 @@ class ImageInAdv(models.Model):
     class Meta:
         verbose_name = "Картинки в объявлениях"
         verbose_name_plural = "Картинки в объявлениях"
+
+class Test(models.Model):
+    adv = models.ForeignKey(Adv, blank=True, null=True, default=None)
+    f = models.CharField(max_length=64, blank=True, null=True, default=None)
