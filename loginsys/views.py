@@ -14,23 +14,20 @@ from django.template import RequestContext, loader
 def login(request):
     print("Hello")
     args = {}
-    print(request.POST)
+
     if request.POST:
-        print('я тут')
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
         user = auth.authenticate(username=username, password=password)
         if user is not None and user.is_active:
             auth.login(request, user)
-            context = {'username': username}
-            return render(request, 'main.html', context)
+            args = {'username': username}
+            return render(request, 'main.html', args)
         else:
             # args('login_error')
-            print('я еуе')
             login_error = 'login_error'
             return render(request, 'login.html', args)
     else:
-        print('или тут')
         return render(request, 'login.html', args)
 
 @csrf_protect
