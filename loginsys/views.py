@@ -12,7 +12,6 @@ from django.template import RequestContext, loader
 
 @csrf_protect
 def login(request):
-    print("Hello")
     args = {}
 
     if request.POST:
@@ -22,7 +21,8 @@ def login(request):
         if user is not None and user.is_active:
             auth.login(request, user)
             args = {'username': username}
-            return render(request, 'main.html', args)
+            # return render(request, 'main.html', args)
+            return redirect('/main/')
         else:
             # args('login_error')
             login_error = 'login_error'

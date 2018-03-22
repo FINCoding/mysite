@@ -6,4 +6,8 @@ def adv(request, adv_id):
     adv = Adv.objects.get(id=adv_id)
     print(MEDIA_ROOT)
     # imagesInAdv = ImageInAdv.objects.get(id=id)
-    return  render(request, 'adv.html', locals())
+    return render(request, 'adv.html', locals())
+
+def add(request, adv_id):
+
+    return render(request, 'adv_add.html', locals())

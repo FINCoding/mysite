@@ -20,6 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include('loginsys.urls')),
     url(r'^chat/', include('chat.urls', namespace='chat')),
-    url(r'^', include('main.urls')),
     url(r'^adv/', include('adv.urls')),
+    url(r'^', include('main.urls')),
 ]
