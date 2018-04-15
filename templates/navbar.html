@@ -11,7 +11,12 @@
                     {% if username %}
                         <li>
                             <a href="/auth/logout/">Выйти ({{ username }}) </a>
-                            <button class="add-adv" href="/adv/add/">Добавить объявление</button>
+                            <form class="add-adv" action="/adv/add/" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Добавить объявление</button>
+                            </form>
+
+                            <!--<input class="add-adv" type="button" value="Добавить объявление" href="{% url 'add' %}">-->
                         </li>
                     {% else %}
                         {{ username }}

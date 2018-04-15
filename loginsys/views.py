@@ -3,12 +3,12 @@ from django.shortcuts import render_to_response, redirect, render
 from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
-from django.views.decorators import csrf
+# from django.views.decorators import csrf
 from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import RequestContext, loader
-# from django.template.loader import get_template
-# from django.template import Context
+# from django.template import RequestContext, loader
+from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 
 @csrf_protect
 def login(request):
@@ -39,13 +39,14 @@ def logout(request):
 @csrf_protect
 def register(request):
     args = {}
-    #
-    args['form'] = UserCreationForm(request.POST)
+    args['form'] = CustomUserCreationForm(request.POST)
     if request.POST:
-        newuser_form = UserCreationForm(request.POST)
+        newuser_form = CustomUserCreationForm(request.POST)
         if newuser_form.is_valid():
            newuser_form.save()
-           newuser = auth.authenticate(username=newuser_form.cleaned_data['username'], password=newuser_form.cleaned_data['password2'])
+           newuser = auth.authenticate(username=newuser_form.cleaned_data['username'],
+                                       password=newuser_form.cleaned_data['password2'],
+                                       email=newuser_form.cleaned_data['email'])
            auth.login(request,newuser)
            context = {'reg': 'Ура!!! Вы зарегистрированы!!! Просим войти.'}
            # return redirect("/main/")

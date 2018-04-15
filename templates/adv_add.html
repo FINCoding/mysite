@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="{% static 'js/scripts.js' %}"></script>
+  </head>
+  <body class="ff">
+    <div class="layout-internal col-12">
+      <div class="item-form">
+        <h1 class="item-form_title">Подать объявление</h1>
+        <form class="form_adv_add" action="submit" method="post">
+          {% csrf_token %}
+          <div class="form-section">
+            <h2 class="form-section_title">Контактная информация</h2>
+            <label class="field_label">Электронная почта</label>
+            <div class="col-4">{{ user_email }}</div>
+            <div class="phone">
+              <label class="form-fieldset_label">Телефон</label>
+              <input class="col-4" type="text" name="phone_numbe" id="phone_numbe"
+                     value="{{ user_phone.phone_number }}">
+            </div>
+            <div class="adv_head">
+              <div class="adv_head_l">
+                <label class="adv_head_l_text">Название объявления</label>
+              </div>
+              <div class="adv_head_i">
+                <input class="adv_head_i_text" id="adv_head">
+              </div>
+            </div>
+            <div class="adv_descr">
+              <div class="adv_descr_l">
+                <label class="adv_descr_l_text">Описание объявления</label>
+              </div>
+              <div class="adv_descr_i">
+                <input class="adv_descr_i_text" id="adv_descr">
+              </div>
+            </div>
+            <div class="adv_file">
+              <div class="adv_file_l">
+                <label class="adv_file_l_text">Фотографии</label>
+              </div>
+              <div class="adv_file_i">
+                <form enctype="multipart/form-data" method="post" action="download">
+                <input class="adv_file_i_"
+                       accept="image/gif, image/jpeg, image/png, image/pjpeg" id="adv_file">
+                </form>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div>
+      <form id="form-test">
+        <input>
+      </form>
+      <button type="submit">
+        пыдыщь
+      </button>
+    </div>
+  </body>
+</html>
