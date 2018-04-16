@@ -11,7 +11,8 @@
                     {% if username %}
                         <li>
                             <a href="/auth/logout/">Выйти ({{ username }}) </a>
-                            <button class="add-adv" href="/adv/add/">Добавить объявление</button>
+                           <input class="add-adv" id="adv-add" type="button" value="Добавить объявление" onclick="location.href=('{% url 'add' %}'" >
+                                          <!--<button class="add-adv" href="/adv/add/">Добавить объявление</button>&ndash;&gt;-->
                         </li>
                     {% else %}
                         {{ username }}

@@ -9,5 +9,5 @@ def adv(request, adv_id):
     return render(request, 'adv.html', locals())
 
 def add(request, adv_id):
-
+    print('Privet')
     return render(request, 'adv_add.html', locals())

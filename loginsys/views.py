@@ -28,6 +28,7 @@ def login(request):
             login_error = 'login_error'
             return render(request, 'login.html', args)
     else:
+        print('ya tut')
         return render(request, 'login.html', args)
 
 @csrf_protect
