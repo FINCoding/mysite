@@ -4,7 +4,7 @@ from category.models import Category
 class Adv(models.Model):
     subj = models.CharField(max_length=64, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
-    category = models.ForeignKey(Category, blank=True, null=True, default=True)
+    category = models.ForeignKey(Category, blank=True, null=True, default=True, on_delete='')
     customer_email = models.EmailField(blank=True, null=True, default=None)
     customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
     customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)
@@ -20,7 +20,7 @@ class Adv(models.Model):
         verbose_name_plural = "Обявления"
 
 class ImageInAdv(models.Model):
-    adv = models.ForeignKey(Adv, blank=True, null=True, default=None)
+    adv = models.ForeignKey(Adv, blank=True, null=True, default=None, on_delete='')
     image = models.ImageField(upload_to='images_adv/')
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -33,5 +33,5 @@ class ImageInAdv(models.Model):
         verbose_name_plural = "Картинки в объявлениях"
 
 class Test(models.Model):
-    adv = models.ForeignKey(Adv, blank=True, null=True, default=None)
+    adv = models.ForeignKey(Adv, blank=True, null=True, default=None, on_delete='')
     f = models.CharField(max_length=64, blank=True, null=True, default=None)

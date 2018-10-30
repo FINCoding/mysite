@@ -1,7 +1,8 @@
+# chat/urls.py
 from django.conf.urls import url
-
-from .views import home
+from . import views
 
 urlpatterns = [
-    url(r'^index$', home),
+    url(r'^$', views.index, name='index'),
+    url(r'^(?P<room_name>[^/]+)/$', views.room, name='room'),
 ]

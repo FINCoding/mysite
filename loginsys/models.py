@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, UserManager, AbstractBaseUser
 
 
 class UserPhone(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete='')
     phone_number = models.CharField(verbose_name='Введите номер телефона',
                                     max_length= 128)
 

@@ -1,9 +1,12 @@
-
-from django.http import HttpResponse
+# chat/views.py
 from django.shortcuts import render
-from django.views.generic import View
+from django.utils.safestring import mark_safe
+import json
 
-from channels.channel import Channel
+def index(request):
+    return render(request, 'chat/index.html', {})
 
-def home(request):
-    return render(request, 'chat.html')
+def room(request, room_name):
+    return render(request, 'chat/room.html', {
+        'room_name_json': mark_safe(json.dumps(room_name))
+    })

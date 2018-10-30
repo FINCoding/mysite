@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'loginsys',
-    # 'channels',
+    'channels',
     'chat',
     'category',
     'adv',
@@ -93,6 +93,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'TEST': {
+            'NAME': os.path.join(BASE_DIR, 'db_test.sqlite3')
+        }
     }
 }
 
@@ -152,7 +155,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")                          
 
 SESSION_ENGINE = 'redis_sessions.session'
 
-try:
-    from local_settings import *
-except ImportError:
-    pass
+# Channels
+ASGI_APPLICATION = 'mysite.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}

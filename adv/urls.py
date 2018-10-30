@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
-from adv import views
-from adv import views
+from . import views
+# from add import views
 
 urlpatterns = [
         url(r'^adv/(?P<adv_id>\w+)/$', views.adv, name = 'adv'),
