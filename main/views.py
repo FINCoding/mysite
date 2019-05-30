@@ -11,6 +11,6 @@ def main(request):
     # if request.method == "POST":
     #     print(form)
     #     new_form = form.save()
-    return render(request, 'main.html', locals() )
+    return render(request, 'index.html', locals() )
 
 

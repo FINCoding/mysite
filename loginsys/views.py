@@ -51,7 +51,7 @@ def register(request):
            auth.login(request,newuser)
            context = {'reg': 'Ура!!! Вы зарегистрированы!!! Просим войти.'}
            # return redirect("/main/")
-           return render(request, 'main.html', context)
+           return render(request, 'index.tmpl', context)
         else:
             args['form'] = newuser_form
     return render(request,'register.html', args )
